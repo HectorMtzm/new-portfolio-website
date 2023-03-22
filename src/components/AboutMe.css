@@ -1,0 +1,40 @@
+.about-me {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.about-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.primary-number {
+    color: #06b6d4;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-picture {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+}
+
+.about-description {
+    max-width: 50%;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
