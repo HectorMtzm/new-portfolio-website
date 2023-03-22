@@ -36,7 +36,7 @@ const BackgroundAnimation = () => {
 
 		const dots = [
 			...createDots('#06b6d4', blueDotRadius, 50),
-			...createDots('#ff0000', whiteDotRadius, 100),
+			...createDots('#ffffff', whiteDotRadius, 100),
 		];
 
 		const drawDot = (dot) => {
@@ -82,7 +82,7 @@ const BackgroundAnimation = () => {
 					if (
 						mouseX !== null &&
 						mouseY !== null &&
-						dot2.color === '#ff0000' &&
+						dot2.color === '#ffffff' &&
 						Math.sqrt((dot1.x - mouseX) * (dot1.x - mouseX) + (dot1.y - mouseY) * (dot1.y - mouseY)) < 150 &&
 						Math.sqrt((dot1.x - dot2.x) * (dot1.x - dot2.x) + (dot1.y - dot2.y) * (dot1.y - dot2.y)) < 150
 					) {
@@ -101,18 +101,18 @@ const BackgroundAnimation = () => {
 			mouseY = event.clientY - rect.top;
 		};
 		
-		const handleMouseLeave = () => {
-			mouseX = null;
-			mouseY = null;
-		};
+		// const handleMouseLeave = () => {
+		// 	mouseX = null;
+		// 	mouseY = null;
+		// };
 		animate();
 		window.addEventListener('mousemove', handleMouseMove);
-		window.addEventListener('mouseleave', handleMouseLeave);
+		// window.addEventListener('mouseleave', handleMouseLeave);
 		window.addEventListener('resize', resizeCanvas);
 		
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
-			window.removeEventListener('mouseleave', handleMouseLeave);
+			// window.removeEventListener('mouseleave', handleMouseLeave);
 			window.removeEventListener('resize', resizeCanvas);
 		};
 		

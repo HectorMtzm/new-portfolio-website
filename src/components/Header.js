@@ -12,7 +12,7 @@ const Header = () => {
 		<header className="header" style={backgroundImage}>
 			<div className="header-content">
 				<h1 className="name">Hector Martinez</h1>
-				<h2 className="role">Back end developer</h2>
+				<h2 className="role">Backend developer</h2>
 				<p className="introduction">
 					I graduated from the University of Texas at Dallas. I am looking for the perfect
 					opportunity to redirect my career as a Java Back end developer.
