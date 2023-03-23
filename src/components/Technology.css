@@ -1,0 +1,29 @@
+.technology {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech-image-wrapper {
+  width: 12rem;
+  height: 12rem;
+  border: 0.25rem solid #06b6d4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-image,
+.tech-icon {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+.tech-name {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+}
+
+  
