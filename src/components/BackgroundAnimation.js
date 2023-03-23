@@ -18,9 +18,6 @@ const BackgroundAnimation = () => {
 		let mouseX = null;
 		let mouseY = null;
 
-		const blueDotRadius = 0.5 * 16;
-		const whiteDotRadius = 0.25 * 16;
-
 		const createDots = (color, radius, count) => {
 			const dots = [];
 			
@@ -34,14 +31,12 @@ const BackgroundAnimation = () => {
 			return dots;
 		};
 
-		const dots = [
-			...createDots('#06b6d4', blueDotRadius, 50),
-			...createDots('#ffffff', whiteDotRadius, 100),
-		];
+		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, 100);
+		const whiteDots = createDots("rgba(200, 200, 200, 0.3)", 4, 100);
 
 		const drawDot = (dot) => {
 			context.beginPath();
-			context.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2, false);
+			// context.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2, false);
 			context.fillStyle = dot.color;
 			context.fill();
 			context.closePath();
@@ -60,64 +55,58 @@ const BackgroundAnimation = () => {
 			}
 		};
 
-		const connectDots = (dot1, dot2) => {
+		const connectDots = (dot1, dot2, mouseDistance) => {
+			const maxDistance = 150;
+			const opacity = 1.1 - mouseDistance / maxDistance;
+
 			context.beginPath();
 			context.moveTo(dot1.x, dot1.y);
 			context.lineTo(dot2.x, dot2.y);
-			context.strokeStyle = dot1.color;
+			context.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
 			context.closePath();
 			context.stroke();
 		};
 
 		const animate = () => {
 			context.clearRect(0, 0, canvas.width, canvas.height);
-			dots.forEach((dot) => {
+			blueDots.forEach((dot) => {
 				drawDot(dot);
 				updateDot(dot);
 			});
-		
-			dots.forEach((dot1) => {
-				if (dot1.color === '#06b6d4') {
-					dots.forEach((dot2) => {
-					if (
-						mouseX !== null &&
-						mouseY !== null &&
-						dot2.color === '#ffffff' &&
-						Math.sqrt((dot1.x - mouseX) * (dot1.x - mouseX) + (dot1.y - mouseY) * (dot1.y - mouseY)) < 150 &&
-						Math.sqrt((dot1.x - dot2.x) * (dot1.x - dot2.x) + (dot1.y - dot2.y) * (dot1.y - dot2.y)) < 150
-					) {
-						connectDots(dot1, dot2);
-					}
-					});
-				}
+			whiteDots.forEach((dot) => {
+				drawDot(dot);
+				updateDot(dot);
 			});
-		
+			
+			blueDots.forEach((blueDot) => {
+				whiteDots.forEach((whiteDot) => {
+					const mouseDistance = Math.sqrt((blueDot.x - mouseX) * (blueDot.x - mouseX) + (blueDot.y - mouseY) * (blueDot.y - mouseY));
+					if (mouseDistance < 150 && Math.sqrt((blueDot.x - whiteDot.x) * (blueDot.x - whiteDot.x) + (blueDot.y - whiteDot.y) * (blueDot.y - whiteDot.y)) < 150) {
+						connectDots(blueDot, whiteDot, mouseDistance);
+					}
+				});
+			});
+			
 			requestAnimationFrame(animate);
 		};
-		
+			
 		const handleMouseMove = (event) => {
 			const rect = canvas.getBoundingClientRect();
 			mouseX = event.clientX - rect.left;
 			mouseY = event.clientY - rect.top;
 		};
-		
-		// const handleMouseLeave = () => {
-		// 	mouseX = null;
-		// 	mouseY = null;
-		// };
+			
 		animate();
 		window.addEventListener('mousemove', handleMouseMove);
-		// window.addEventListener('mouseleave', handleMouseLeave);
 		window.addEventListener('resize', resizeCanvas);
-		
+			
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
-			// window.removeEventListener('mouseleave', handleMouseLeave);
 			window.removeEventListener('resize', resizeCanvas);
 		};
-		
+			
 	}, []);
-	  
+		
 	return <canvas className="background-animation" ref={canvasRef} />;
 };
 	  
