@@ -1,33 +1,35 @@
 .technologies {
-  height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2rem;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2rem;
+	background-color: #030509;
+	color: white;
 }
 
 .tech-title {
-  text-align: center;
-  margin-bottom: 2rem;
-  position: absolute;
-  top: 2rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	position: absolute;
+	top: 2rem;
 }
 
 .primary-number {
-  color: #06b6d4;
+	color: #06b6d4;
 }
 
 .tech-wrapper {
-  max-width: 62.5rem; /* 1000px in rem */
-  width: 100%;
+	max-width: 62.5rem;
+	width: 100%;
 }
 
 .tech-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Updated from repeat(auto-fit, minmax(15rem, 1fr)) */
-  gap: 2rem;
-  justify-items: center;
-  padding: 2rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2rem;
+	justify-items: center;
+	padding: 2rem;
 }

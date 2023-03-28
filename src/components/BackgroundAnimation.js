@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-import './BackgroundAnimation.css';
+import React, { useEffect, useRef } from "react";
+import "./BackgroundAnimation.css";
 
 const BackgroundAnimation = () => {
 	const canvasRef = useRef(null);
 
 	useEffect(() => {
 		const canvas = canvasRef.current;
-		const context = canvas.getContext('2d');
+		const context = canvas.getContext("2d");
 
 		const resizeCanvas = () => {
 			canvas.width = window.innerWidth;
@@ -20,7 +20,7 @@ const BackgroundAnimation = () => {
 
 		const createDots = (color, radius, count) => {
 			const dots = [];
-			
+
 			for (let i = 0; i < count; i++) {
 				const x = Math.random() * canvas.width;
 				const y = Math.random() * canvas.height;
@@ -31,7 +31,7 @@ const BackgroundAnimation = () => {
 			return dots;
 		};
 
-		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, 100);
+		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, 150);
 		const whiteDots = createDots("rgba(200, 200, 200, 0.3)", 4, 100);
 
 		const drawDot = (dot) => {
@@ -77,7 +77,7 @@ const BackgroundAnimation = () => {
 				drawDot(dot);
 				updateDot(dot);
 			});
-			
+
 			blueDots.forEach((blueDot) => {
 				whiteDots.forEach((whiteDot) => {
 					const mouseDistance = Math.sqrt((blueDot.x - mouseX) * (blueDot.x - mouseX) + (blueDot.y - mouseY) * (blueDot.y - mouseY));
@@ -86,28 +86,32 @@ const BackgroundAnimation = () => {
 					}
 				});
 			});
-			
+
 			requestAnimationFrame(animate);
 		};
-			
+
 		const handleMouseMove = (event) => {
 			const rect = canvas.getBoundingClientRect();
 			mouseX = event.clientX - rect.left;
 			mouseY = event.clientY - rect.top;
 		};
-			
+
 		animate();
-		window.addEventListener('mousemove', handleMouseMove);
-		window.addEventListener('resize', resizeCanvas);
-			
+		window.addEventListener("mousemove", handleMouseMove);
+		window.addEventListener("resize", resizeCanvas);
+
 		return () => {
-			window.removeEventListener('mousemove', handleMouseMove);
-			window.removeEventListener('resize', resizeCanvas);
+			window.removeEventListener("mousemove", handleMouseMove);
+			window.removeEventListener("resize", resizeCanvas);
 		};
-			
 	}, []);
-		
-	return <canvas className="background-animation" ref={canvasRef} />;
+
+	return (
+		<canvas
+			className="background-animation"
+			ref={canvasRef}
+		/>
+	);
 };
-	  
+
 export default BackgroundAnimation;
