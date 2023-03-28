@@ -1,8 +1,23 @@
 .App {
-  font-size: 1.125rem;
-  text-align: center;
+	font-size: 1.125rem;
+	text-align: center;
 }
 
 h2 {
-  font-size: 3rem;
+	font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+	h2 {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 900) {
+}
+
+@media (max-width: 1200px) {
 }

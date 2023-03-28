@@ -10,7 +10,7 @@ const BackgroundAnimation = () => {
 
 		const resizeCanvas = () => {
 			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
+			canvas.height = window.innerHeight+40;
 		};
 
 		resizeCanvas();

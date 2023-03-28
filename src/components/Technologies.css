@@ -1,5 +1,5 @@
 .technologies {
-	height: 100vh;
+	height: auto;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -28,8 +28,29 @@
 
 .tech-grid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 2rem;
 	justify-items: center;
+	justify-content: center;
 	padding: 2rem;
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 768px) {
+	.tech-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.7rem;
+		padding: 0 1rem;
+	}
+}
+
+@media (min-width: 900) {
+	.tech-grid {
+		gap: 1.5rem;
+	}
+}
+
+@media (min-width: 1200px) {
 }
