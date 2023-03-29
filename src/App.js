@@ -30,7 +30,7 @@ function App() {
 		},
 		{
 			name: "Hibernate",
-			image: "https://www.javatpoint.com/images/hibernate/hibernate2.png",
+			image: "https://cdn.icon-icons.com/icons2/2699/PNG/512/hibernate_logo_icon_171004.png",
 		},
 		{
 			name: "AWS",
@@ -46,20 +46,12 @@ function App() {
 		},
 		{
 			name: "MongoDB",
-			image: "https://webimages.mongodb.com/_com_assets/cms/kuyj3d95v5vbmm2f4-horizontal_white.svg?auto=format%252Ccompress",
+			image: "https://cdn.iconscout.com/icon/free/png-512/mongodb-4-1175139.png?f=avif&w=256",
 		},
 		{
 			name: "MySQL",
 			image: "https://www.mysql.com/common/logos/logo-mysql-170x115.png",
-		},
-		{
-			name: "HTML",
-			image: "https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-html-logo-0.png",
-		},
-		{
-			name: "CSS",
-			image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/1280px-CSS3_logo.svg.png",
-		},
+		}
 	];
 
 	return (
@@ -68,7 +60,6 @@ function App() {
 				<Header />
 				<AboutMe />
 				<Technologies techData={techData} />
-				{/* Add your components for other sections here */}
 			</div>
 		</Router>
 	);

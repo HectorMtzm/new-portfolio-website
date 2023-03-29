@@ -12,11 +12,7 @@ const Technologies = ({ techData }) => {
 			<div className="tech-wrapper">
 				<div className="tech-grid">
 					{techData.map((tech, index) => (
-						<Technology
-							key={index}
-							image={tech.image}
-							name={tech.name}
-						/>
+						<Technology key={index} image={tech.image} name={tech.name} />
 					))}
 				</div>
 			</div>
