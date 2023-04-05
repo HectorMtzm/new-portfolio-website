@@ -1,0 +1,122 @@
+.work-experience-wrapper {
+	display: flex;
+	justify-content: space-between;
+	max-width: 50rem;
+	margin: 0 auto;
+}
+
+.tabs {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	border-left: 3px solid #cccccc;
+}
+
+.tab {
+	padding: 1rem;
+	cursor: pointer;
+	background-color: transparent;
+	color: #ccc;
+	transition: color 0.3s ease-in-out;
+	text-decoration: none;
+	position: relative;
+}
+
+.tab:hover {
+	background-color: #eeeeee;
+	/* color: black; */
+}
+
+.tab.selected {
+	color: #06b6d4;
+}
+
+.slider {
+	position: absolute;
+	background-color: #06b6d4;
+	transition: all 0.5s ease-in-out;
+	width: 3px;
+	margin-left: -3px;
+}
+
+.content {
+	width: 100%;
+	padding: 1rem;
+	text-align: left;
+}
+
+.job-title {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+	padding-left: 1.2rem;
+}
+
+.job-duration {
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	padding-left: 1.2rem;
+}
+
+.job-description {
+	font-size: 1rem;
+	padding-left: 1.2rem;
+	list-style-type: none;
+}
+
+.job-description li {
+	position: relative;
+	padding-left: 1.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.job-description li::before {
+	content: "▷";
+	font-size: 10px;
+	color: #06b6d4;
+	position: absolute;
+	left: 0;
+	top: 3px;
+}
+
+.fadeup-enter {
+	opacity: 0.01;
+	transform: translateY(20px);
+	transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+.fadeup-enter-active {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+.fadedown-enter {
+	opacity: 0.01;
+	transform: translateY(-20px);
+	transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+.fadedown-enter-active {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	opacity: 1;
+	transition: opacity 300ms var(--easing);
+}
+
+.fade-exit {
+	opacity: 1;
+}
+
+.fade-exit-active {
+	opacity: 0;
+	transition: opacity 300ms var(--easing);
+}
