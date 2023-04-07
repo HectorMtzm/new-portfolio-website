@@ -1,66 +1,3 @@
-/* .technologies {
-	min-height: 100vh;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-top: 2rem;
-	background-color: #030509;
-	color: white;
-}
-
-.tech-title {
-	text-align: center;
-	margin-bottom: 2rem;
-	position: absolute;
-	top: 2rem;
-}
-
-.primary-number {
-	color: #06b6d4;
-}
-
-.tech-wrapper {
-	max-width: 62.5rem;
-	width: 100%;
-}
-
-.tech-grid {
-	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 2rem;
-	justify-items: center;
-	justify-content: center;
-	padding: 2rem;
-}
-
-@media (max-width: 600px) {
-}
-
-@media (max-width: 768px) {
-	.tech-grid {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.7rem;
-		padding: 0 1rem;
-	}
-}
-
-@media (min-width: 900) {
-	.tech-grid {
-		gap: 1.5rem;
-	}
-}
-
-@media (min-width: 1200px) {
-} */
-
-
-
-
-
-
-
 .technologies {
 	min-height: 100vh;
 	position: relative;
@@ -91,7 +28,7 @@
 
 .tech-grid {
 	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 	gap: 2rem;
 	justify-items: center;
 	justify-content: center;

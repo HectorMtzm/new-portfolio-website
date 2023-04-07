@@ -58,14 +58,16 @@ const AboutMe = () => {
 			<h2 className="about-title">
 				<span className="primary-number">1.</span> About me
 			</h2>
-			<div clas   sName="about-content-wrapper">
+			<div className="about-content-wrapper">
 				<div className="about-content">
 					<img src={profilePicture} alt="Hector Martinez" className="profile-picture" />
-					<p className="about-description content-blurred-bg">Do ullamco quis quis dolore dolore deserunt fugiat deserunt. Dolore nulla tempor officia aliqua fugiat ut est. Est proident adipisicing deserunt voluptate enim. Minim occaecat adipisicing magna enim laborum cupidatat aliqua. Cillum adipisicing officia duis exercitation Lorem excepteur. Ea amet eu anim veniam laborum aute anim. Sint culpa ipsum deserunt voluptate.</p>
+					<div className="about-description content-blurred-bg">
+						<p>Do ullamco quis quis dolore dolore deserunt fugiat deserunt. Dolore nulla tempor officia aliqua fugiat ut est. Est proident adipisicing deserunt voluptate enim. Minim occaecat adipisicing magna enim laborum cupidatat aliqua. Cillum adipisicing officia duis exercitation Lorem excepteur. Ea amet eu anim veniam laborum aute anim. Sint culpa ipsum deserunt voluptate.</p>
+					</div>
 				</div>
-				{/* <Workexperience /> */}
+				<Workexperience />
+				<Technologies techData={techData} />
 			</div>
-			<Technologies techData={techData} />
 		</section>
 	);
 };

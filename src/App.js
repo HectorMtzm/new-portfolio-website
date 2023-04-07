@@ -51,7 +51,7 @@ function App() {
 		{
 			name: "MySQL",
 			image: "https://www.mysql.com/common/logos/logo-mysql-170x115.png",
-		}
+		},
 	];
 
 	return (
@@ -59,7 +59,7 @@ function App() {
 			<div className="App">
 				<Header />
 				<AboutMe />
-				<Technologies techData={techData} />
+				{/* <Technologies techData={techData} /> */}
 			</div>
 		</Router>
 	);

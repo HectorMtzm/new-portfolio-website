@@ -4,7 +4,7 @@ import "./Technology.css";
 const Technology = ({ image, name }) => {
 	return (
 		<div className="technology">
-			<p className="tech-name">{name}</p>
+			{/* <p className="tech-name">{name}</p> */}
 			<div className="tech-image-wrapper">
 				<img src={image} alt={name} className="tech-image" />
 			</div>
