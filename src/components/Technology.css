@@ -5,9 +5,9 @@
 	align-items: center;
 	justify-self: stretch;
 	/* background-color: #03060a; */
-	background-color: #070d16;
-	border: 0.125rem solid #262626;
-	border-radius: 1rem;
+	/* background-color: #070d16; */
+	/* border: 0.125rem solid #262626; */
+	/* border-radius: 1rem; */
 	padding: 1rem;
 	color: #fff;
 }
@@ -22,13 +22,15 @@
 
 .tech-image,
 .tech-icon {
-	max-width: 70%;
-	max-height: 70%;
+	max-width: 100%;
+	max-height: 110%;
 }
 
 .tech-name {
-	margin: 0;
-	font-size: 1.125rem;
+	margin-top: 10px;
+	/* font-size: 1.125rem; */
+	font-size: var(--fs-xs);
+	color: black;
 }
 
 .tech-description {
@@ -60,22 +62,3 @@
 		max-height: 60%;
 	}
 }
-
-/* @media (max-width: 900) {
-	.tech-image-wrapper {
-		width: 8rem;
-		height: 8rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.tech-image,
-	.tech-icon {
-		max-width: 80%;
-		max-height: 80%;
-	}
-}
-
-@media (max-width: 1200px) {
-} */

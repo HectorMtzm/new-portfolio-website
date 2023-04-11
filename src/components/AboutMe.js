@@ -69,6 +69,7 @@ const AboutMe = () => {
 				</div>
 				<h3 className="secondary-header">My Work experience</h3>
 				<Workexperience />
+				<h3 className="secondary-header">My current technologies</h3>
 				<Technologies techData={techData} />
 			</div>
 		</section>
