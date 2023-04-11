@@ -55,16 +55,19 @@ const AboutMe = () => {
 	return (
 		<section className="about-me">
 			<BackgroundAnimation />
-			<h2 className="about-title">
-				<span className="primary-number">1.</span> About me
+			<h2 className="section-header">
+				<span className="primary-number">1</span> About me
 			</h2>
 			<div className="about-content-wrapper">
 				<div className="about-content">
 					<img src={profilePicture} alt="Hector Martinez" className="profile-picture" />
 					<div className="about-description content-blurred-bg">
-						<p>Do ullamco quis quis dolore dolore deserunt fugiat deserunt. Dolore nulla tempor officia aliqua fugiat ut est. Est proident adipisicing deserunt voluptate enim. Minim occaecat adipisicing magna enim laborum cupidatat aliqua. Cillum adipisicing officia duis exercitation Lorem excepteur. Ea amet eu anim veniam laborum aute anim. Sint culpa ipsum deserunt voluptate.</p>
+						<p>Originally from Mexico and now living in the USA, I'm Hector Martinez - a devoted software engineer with a keen interest in back end and full stack development. As an alumnus of the University of Texas at Dallas, I've gained valuable experience at IBM and honed my skills in Java, Spring Boot, and Amazon Web Services.</p>
+						<p>Driven by a desire for constant improvement, I'm actively working on enhancing my front-end development expertise while thriving in my current role at IBM. With a focus on collaboration and agility, I've successfully managed and maintained intricate software projects in diverse international teams.</p>
+						<p>Join me on my journey as a developer and discover my engaging projects and experiences!</p>
 					</div>
 				</div>
+				<h3 className="secondary-header">My Work experience</h3>
 				<Workexperience />
 				<Technologies techData={techData} />
 			</div>

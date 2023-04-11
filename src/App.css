@@ -1,16 +1,6 @@
 .App {
-	font-size: 1.125rem;
+	font-size: var(--fs-lg);
 	text-align: center;
-}
-
-h2 {
-	font-size: 3rem;
-}
-
-@media (max-width: 600px) {
-	h2 {
-		font-size: 2rem;
-	}
 }
 
 @media (max-width: 768px) {

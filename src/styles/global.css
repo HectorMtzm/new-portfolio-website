@@ -1,0 +1,22 @@
+@import "./variables.css";
+
+.primary-number {
+	color: var(--primary-color);
+}
+
+.section-header {
+	font-size: var(--fs-heading);
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.secondary-header {
+	font-size: var(--fs-secondary-heading);
+}
+
+.content-blurred-bg {
+	background: rgba(255, 255, 255, 0.4);
+	padding: 1rem;
+	border-radius: 1rem;
+	backdrop-filter: blur(2px);
+}

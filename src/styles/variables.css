@@ -1,0 +1,12 @@
+#root {
+	--fs-xxs: 12px;
+	--fs-xs: 13px;
+	--fs-sm: 14px;
+	--fs-md: 16px;
+	--fs-lg: 18px;
+	--fs-xl: 20px;
+	--fs-xxl: 22px;
+	--fs-heading: 48px;
+	--fs-secondary-heading: 32px;
+	--primary-color: #06b6d4;
+}

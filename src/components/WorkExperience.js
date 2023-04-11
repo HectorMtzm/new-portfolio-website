@@ -3,42 +3,53 @@ import "./WorkExperience.css";
 
 const WorkExperience = () => {
 	const [selectedTab, setSelectedTab] = useState(0);
-	const [tabHeights, setTabHeights] = useState([]);
+	const [tabDimensions, setTabDimensions] = useState([]);
 	const tabRefs = useRef([]);
+	const isMobile = window.innerWidth <= 768;
+	const translateValue = isMobile ? tabRefs.current.slice(0, selectedTab).reduce((acc, tabRef) => acc + tabRef.offsetWidth, 0) : tabRefs.current.slice(0, selectedTab).reduce((acc, tabRef) => acc + tabRef.offsetHeight, 0);
+	const translateProp = isMobile ? "translateX" : "translateY";
+	const sizeProp = isMobile ? "width" : "height";
 
 	useEffect(() => {
-		const newTabHeights = tabRefs.current.map((tabRef) => tabRef.offsetHeight);
-		setTabHeights(newTabHeights);
+		const newTabDimensions = tabRefs.current.map((tabRef) => ({
+			height: tabRef.offsetHeight,
+			width: tabRef.offsetWidth,
+		}));
+		setTabDimensions(newTabDimensions);
 	}, []);
 
 	const jobs = [
 		{
 			id: 0,
 			company: "IBM",
-			title: "Job Title A",
-			duration: "2018 - 2020",
-			description: ["Responsibility 1 for Company A", "Responsibility 2 for Company A", "Responsibility 3 for Company A"],
+			title: "Back-end developer",
+			duration: "March 2021 - Present",
+			description: [
+				"Involved in development, debugging, and fixing issues in various components of the AIX operating system.",
+				"Collaborate with international team members to discuss, debug, and resolve customer-reported errors.",
+				"Used technical skills in programming languages, including C++, C, and shell scripting to find and implement solutions.",
+				"Developed and maintained a Spring Boot-based web application for internal use within the company, which helped speed up the configuring and redeployment of virtual machines by 50%.",
+			],
 		},
 		{
 			id: 1,
 			company: "Freelancer",
-			title: "Job Title B",
-			duration: "2020 - 2022",
-			description: ["Responsibility 1 for Company B", "Responsibility 2 for Company B", "Responsibility 3 for Company B"],
+			title: "Full-stack developer",
+			duration: "January 2020 - March 2021",
+			description: ["Developed single page applications using HTML, SASS, JavaScript, and React.", "Developed static websites using HTML, CSS and JavaScript, As well as web apps using Spring Boot."],
 		},
 		{
 			id: 2,
 			company: "Squareball Studios",
-			title: "Job Title C",
-			duration: "2020 - 2022",
-			description: ["Responsibility 1 for Company C", "Responsibility 2 for Company c", "Responsibility 3 for Company c"],
+			title: "Back-end developer intern",
+			duration: "June 2019 - September 2019",
+			description: ["Collaborated with teams located in different countries to develop and maintain projects effectively.", "Used PHP to perform CRUD operation in relational databases using SQL.", "Retrieved data from third parties APIs for display in the app."],
 		},
 	];
 
-	const translateY = tabHeights.slice(0, selectedTab).reduce((acc, height) => acc + height, 0);
 	const sliderStyle = {
-		transform: `translateY(${translateY}px)`,
-		height: `${tabHeights[selectedTab] || 0}px`,
+		transform: `${translateProp}(${translateValue}px)`,
+		[sizeProp]: `${tabDimensions[selectedTab]?.[sizeProp] || 0}px`,
 	};
 
 	return (

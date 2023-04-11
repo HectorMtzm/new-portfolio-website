@@ -11,7 +11,7 @@
 }
 
 .header-content {
-	max-width: 800px;
+	max-width: 50rem;
 	margin: 2rem 0;
 }
 
@@ -25,17 +25,25 @@
 }
 
 .social-links a {
-	color: #fff;
 	margin: 0 0.625rem;
 	text-decoration: none;
 }
 
 .social-links a svg path {
 	fill: #fff;
+	transition: all 0.5s;
+}
+
+.social-links a:hover svg path {
+	fill: var(--primary-color);
+}
+
+.social-links a:hover {
+	transform: translateY(-30px);
 }
 
 .name {
-	color: #06b6d4;
+	color: var(--primary-color);
 	font-size: 6rem;
 	font-weight: 700;
 	line-height: 1;
@@ -55,17 +63,23 @@
 
 .resume-button {
 	background-color: transparent;
-	border: 0.125rem solid #06b6d4;
-	color: #06b6d4;
+	border: 0.125rem solid var(--primary-color);
+	border-radius: 5px;
+	color: var(--primary-color);
 	padding: 0.9375rem 2rem;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 1.25rem;
+	font-size: var(--fs-lg);
 	margin: 0.625rem 0.125rem;
 	cursor: pointer;
 	margin-bottom: 2.5rem;
 	margin-top: 2.5rem;
+	transition: all 0.5s;
+}
+
+.resume-button:hover {
+	background-color: rgba(190, 244, 254, 0.15);
 }
 
 @media (max-width: 600px) {
@@ -80,7 +94,7 @@
 
 	.resume-button {
 		padding: 0.78rem 1.5rem;
-		font-size: 1rem;
+		font-size: var(--fs-md);
 	}
 }
 
