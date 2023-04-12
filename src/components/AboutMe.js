@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./AboutMe.css";
 import profilePicture from "../assets/profile-picture.jpg";
 import BackgroundAnimation from "./BackgroundAnimation";
@@ -6,6 +6,8 @@ import Workexperience from "./WorkExperience";
 import Technologies from "./Technologies";
 
 const AboutMe = () => {
+	const techStackRef = useRef(null);
+	const aboutMeRef = useRef(null);
 	const techData = [
 		{
 			name: "Java",
@@ -32,6 +34,10 @@ const AboutMe = () => {
 			image: "https://cdn.icon-icons.com/icons2/2699/PNG/512/hibernate_logo_icon_171004.png",
 		},
 		{
+			name: "React",
+			image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png?20220125121207",
+		},
+		{
 			name: "AWS",
 			image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png?20170912170050",
 		},
@@ -53,13 +59,14 @@ const AboutMe = () => {
 		},
 	];
 	return (
-		<section className="about-me">
-			<BackgroundAnimation />
+		<section className="about-me" ref={aboutMeRef}>
+			<BackgroundAnimation aboutMeRef={aboutMeRef} />
 			<h2 className="section-header">
 				<span className="primary-number">1</span> About me
 			</h2>
 			<div className="about-content-wrapper">
 				<div className="about-content">
+					s
 					<img src={profilePicture} alt="Hector Martinez" className="profile-picture" />
 					<div className="about-description content-blurred-bg">
 						<p>Originally from Mexico and now living in the USA, I'm Hector Martinez - a devoted software engineer with a keen interest in back end and full stack development. As an alumnus of the University of Texas at Dallas, I've gained valuable experience at IBM and honed my skills in Java, Spring Boot, and Amazon Web Services.</p>
@@ -67,10 +74,14 @@ const AboutMe = () => {
 						<p>Join me on my journey as a developer and discover my engaging projects and experiences!</p>
 					</div>
 				</div>
-				<h3 className="secondary-header">My Work experience</h3>
-				<Workexperience />
-				<h3 className="secondary-header">My current technologies</h3>
-				<Technologies techData={techData} />
+				<>
+					<h3 className="secondary-header">My Work experience</h3>
+					<Workexperience />
+				</>
+				<div ref={techStackRef} className="tech-stack">
+					<h3 className="secondary-header">My technology stack</h3>
+					<Technologies containerRef={techStackRef} techData={techData} />
+				</div>
 			</div>
 		</section>
 	);

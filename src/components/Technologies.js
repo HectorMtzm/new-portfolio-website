@@ -1,13 +1,16 @@
 import React from "react";
 import "./Technologies.css";
 import Technology from "./Technology";
+import useTechnologyAnimation from "./useTechnologyAnimation";
 
-const Technologies = ({ techData }) => {
+const Technologies = ({ containerRef, techData }) => {
+	const animatedTechData = useTechnologyAnimation(containerRef, techData);
+
 	return (
 		<div className="tech-wrapper">
-			<div className="tech-grid">
-				{techData.map((tech, index) => (
-					<Technology key={index} image={tech.image} name={tech.name} />
+			<div ref={containerRef} className="tech-grid">
+				{animatedTechData.map((tech, index) => (
+					<Technology key={index} id={`tech-${index}`} image={tech.image} name={tech.name} scale={tech.scale} />
 				))}
 			</div>
 		</div>

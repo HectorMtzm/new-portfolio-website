@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./BackgroundAnimation.css";
 
-const BackgroundAnimation = () => {
+const BackgroundAnimation = ({ aboutMeRef }) => {
 	const canvasRef = useRef(null);
 
 	useEffect(() => {
@@ -10,7 +10,8 @@ const BackgroundAnimation = () => {
 
 		const resizeCanvas = () => {
 			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight + 40;
+			const aboutMeHeight = aboutMeRef.current ? aboutMeRef.current.offsetHeight : 0;
+			canvas.height = Math.max(window.innerHeight, aboutMeHeight) + 40;
 		};
 
 		resizeCanvas();
@@ -34,13 +35,13 @@ const BackgroundAnimation = () => {
 		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, 150);
 		const whiteDots = createDots("rgba(200, 200, 200, 0.3)", 4, 100);
 
-		// const drawDot = (dot) => {
-		// 	context.beginPath();
-		// 	context.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2, false);
-		// 	context.fillStyle = dot.color;
-		// 	context.fill();
-		// 	context.closePath();
-		// };
+		const drawDot = (dot) => {
+			context.beginPath();
+			// context.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2, false);
+			context.fillStyle = dot.color;
+			context.fill();
+			context.closePath();
+		};
 
 		const updateDot = (dot) => {
 			dot.x += dot.dx;
@@ -70,11 +71,11 @@ const BackgroundAnimation = () => {
 		const animate = () => {
 			context.clearRect(0, 0, canvas.width, canvas.height);
 			blueDots.forEach((dot) => {
-				// drawDot(dot);
+				drawDot(dot);
 				updateDot(dot);
 			});
 			whiteDots.forEach((dot) => {
-				// drawDot(dot);
+				drawDot(dot);
 				updateDot(dot);
 			});
 
