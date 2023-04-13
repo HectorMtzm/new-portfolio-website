@@ -105,7 +105,7 @@ const BackgroundAnimation = ({ aboutMeRef }) => {
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("resize", resizeCanvas);
 		};
-	}, []);
+	}, [aboutMeRef]);
 
 	return <canvas className="background-animation" ref={canvasRef} />;
 };
