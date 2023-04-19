@@ -1,24 +1,41 @@
 [
     {
         "id": 1,
-        "title": "Project 1",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+        "title": "University CRM",
+        "description": "Project simulates a university CRM in which we can manage students, instructors and courses. The rest API was built with Spring Boot. The frontend was built with React, and the data is persisted in a Amazon RDS",
         "technologies": [
+            "Java",
             "React",
+            "Spring Boot",
             "JavaScript",
-            "MongoDB"
+            "MySQL",
+            "AWS"
         ],
-        "githubLink": "https://github.com/user/project1"
+        "githubLink": "https://github.com/user/project1",
+        "appLink": "https://www.hemm.dev"
     },
     {
         "id": 2,
-        "title": "Project 2",
+        "title": "2D platform game",
         "description": "Sed do eiusmod tempor incididunt ut labore et dolore...",
         "technologies": [
             "Java",
             "Spring Boot",
             "MySQL"
         ],
-        "githubLink": "https://github.com/user/project2"
+        "githubLink": "https://github.com/user/project2",
+        "appLink": ""
+    },
+    {
+        "id": 3,
+        "title": "Sudoku solver",
+        "description": "This Sudoku solver uses backtracking to solve the board. It will detect errors on the board dynamically while the user enters the data.",
+        "technologies": [
+            "Java",
+            "Spring Boot",
+            "JavaScript"
+        ],
+        "githubLink": "https://github.com/user/project2",
+        "appLink": ""
     }
 ]

@@ -6,13 +6,14 @@ import projects from "../../data/projects.json";
 
 const Portfolio = () => {
 	return (
-		<section className="portfolio">
+		<section className="portfolio container">
 			<h2 className="section-header">
-				<span className="primary-number">2</span> Projects
+				<span className="primary-number">2.</span> Projects
 			</h2>
+			<p>Salsa verde</p>
 			<div className="projects-wrapper">
-				{projects.map((project) => (
-					<Project key={project.id} project={project} techData={techData} />
+				{projects.map((project, index) => (
+					<Project key={project.id} project={project} techData={techData} index={index} />
 				))}
 			</div>
 		</section>

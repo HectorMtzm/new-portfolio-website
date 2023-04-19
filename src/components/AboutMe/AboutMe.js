@@ -14,7 +14,7 @@ const AboutMe = () => {
 		<section className="about-me" ref={aboutMeRef}>
 			<BackgroundAnimation aboutMeRef={aboutMeRef} />
 			<h2 className="section-header">
-				<span className="primary-number">1</span> About me
+				<span className="primary-number">1.</span> About me
 			</h2>
 			<div className="about-content-wrapper">
 				<div className="about-content">

@@ -1,0 +1,96 @@
+.project {
+	display: flex;
+	margin-bottom: 3rem;
+	align-items: stretch;
+	height: 300px;
+}
+
+.project-image {
+	width: 50%;
+	object-fit: cover;
+}
+
+.project-content {
+	width: 50%;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #ffffff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.left-aligned {
+	flex-direction: row;
+	margin-left: 120px;
+}
+
+.right-aligned {
+	flex-direction: row-reverse;
+	margin-right: 120px;
+}
+
+.project-buttons {
+	display: flex;
+}
+
+.project-title {
+	margin-top: 10px;
+	margin-bottom: auto;
+	font-weight: 700;
+	font-size: 1.5rem;
+}
+
+.project-description {
+	margin: 0 0 1rem;
+	font-size: 1rem;
+}
+
+.project-technologies {
+	margin: auto 0 15px 0;
+	padding-left: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.technology-icon {
+	width: auto;
+	height: 32px;
+}
+
+.project-link {
+	height: 18.4px;
+	padding: 10px;
+	font-size: 1rem;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: var(--primary-color);
+	border-radius: 3px;
+	transition: background-color 0.3s ease;
+	width: 100%;
+}
+
+.project-link svg {
+	height: 22px;
+	width: 22px;
+	fill: none;
+}
+
+.project-link path {
+	fill: #fff;
+}
+
+.project-link:hover {
+	background-color: var(--primary-color);
+}
+
+.project-app-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 7%;
+	margin-right: 10px;
+}
