@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "normalize.css";
-import "./App.css";
-import Header from "./components/Header";
-import AboutMe from "./components/AboutMe";
-import Portfolio from "./components/Portfolio";
+import "./assets/styles/App.css";
+import Header from "./components/Header/Header";
+import AboutMe from "./components/AboutMe/AboutMe";
+import Portfolio from "./components/Portfolio/Portfolio";
 
 function App() {
 	return (

@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "title": "Project 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+        "technologies": [
+            "React",
+            "JavaScript",
+            "MongoDB"
+        ],
+        "githubLink": "https://github.com/user/project1"
+    },
+    {
+        "id": 2,
+        "title": "Project 2",
+        "description": "Sed do eiusmod tempor incididunt ut labore et dolore...",
+        "technologies": [
+            "Java",
+            "Spring Boot",
+            "MySQL"
+        ],
+        "githubLink": "https://github.com/user/project2"
+    }
+]

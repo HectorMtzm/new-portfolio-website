@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import "./AboutMe.css";
-import profilePicture from "../assets/profile-picture.jpg";
-import BackgroundAnimation from "./BackgroundAnimation";
-import Workexperience from "./WorkExperience";
-import Technologies from "./Technologies";
-import { techData } from "./techData";
+import "../AboutMe/AboutMe.css";
+import profilePicture from "../../assets/images/profile-picture.jpg";
+import BackgroundAnimation from "../BackgroundAnimation/BackgroundAnimation";
+import Workexperience from "../WorkExperience/WorkExperience";
+import Technologies from "../Technologies/Technologies";
+import techData from "../../data/tech_data.json";
 
 const AboutMe = () => {
 	const techStackRef = useRef(null);
