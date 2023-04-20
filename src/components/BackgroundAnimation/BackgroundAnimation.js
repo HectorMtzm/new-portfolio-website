@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "./BackgroundAnimation.css";
 
+const isMobile = () => window.innerWidth <= 768;
+console.log("Is MOBILE???: " + isMobile());
 const BackgroundAnimation = ({ aboutMeRef }) => {
 	const canvasRef = useRef(null);
 
@@ -32,8 +34,8 @@ const BackgroundAnimation = ({ aboutMeRef }) => {
 			return dots;
 		};
 
-		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, 150);
-		const whiteDots = createDots("rgba(200, 200, 200, 0.3)", 4, 100);
+		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, isMobile() ? 50 : 150);
+		const whiteDots = createDots("rgba(200, 200, 200, 0.3)", 4, isMobile() ? 50 : 100);
 
 		const drawDot = (dot) => {
 			context.beginPath();
@@ -79,14 +81,24 @@ const BackgroundAnimation = ({ aboutMeRef }) => {
 				updateDot(dot);
 			});
 
-			blueDots.forEach((blueDot) => {
-				whiteDots.forEach((whiteDot) => {
-					const mouseDistance = Math.sqrt((blueDot.x - mouseX) * (blueDot.x - mouseX) + (blueDot.y - mouseY) * (blueDot.y - mouseY));
-					if (mouseDistance < 150 && Math.sqrt((blueDot.x - whiteDot.x) * (blueDot.x - whiteDot.x) + (blueDot.y - whiteDot.y) * (blueDot.y - whiteDot.y)) < 150) {
-						connectDots(blueDot, whiteDot, mouseDistance);
-					}
+			if (isMobile()) {
+				blueDots.forEach((blueDot) => {
+					whiteDots.forEach((whiteDot) => {
+						if (Math.sqrt((blueDot.x - whiteDot.x) * (blueDot.x - whiteDot.x) + (blueDot.y - whiteDot.y) * (blueDot.y - whiteDot.y)) < 150) {
+							connectDots(blueDot, whiteDot, 0);
+						}
+					});
 				});
-			});
+			} else {
+				blueDots.forEach((blueDot) => {
+					whiteDots.forEach((whiteDot) => {
+						const mouseDistance = Math.sqrt((blueDot.x - mouseX) * (blueDot.x - mouseX) + (blueDot.y - mouseY) * (blueDot.y - mouseY));
+						if (mouseDistance < 150 && Math.sqrt((blueDot.x - whiteDot.x) * (blueDot.x - whiteDot.x) + (blueDot.y - whiteDot.y) * (blueDot.y - whiteDot.y)) < 150) {
+							connectDots(blueDot, whiteDot, mouseDistance);
+						}
+					});
+				});
+			}
 
 			requestAnimationFrame(animate);
 		};

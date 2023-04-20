@@ -1,24 +1,26 @@
 .project {
 	display: flex;
-	margin-bottom: 3rem;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: stretch;
-	height: 300px;
+	margin-bottom: 40px;
 }
 
 .project-image {
-	width: 50%;
+	width: 100%;
 	object-fit: cover;
+	max-height: 300px;
 }
 
 .project-content {
-	width: 50%;
-	padding: 1rem;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	padding: 1rem;
+	/* justify-content: space-between; */
 	justify-content: center;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: #ffffff;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .left-aligned {
@@ -62,7 +64,7 @@
 }
 
 .project-link {
-	height: 18.4px;
+	height: 38.4px;
 	padding: 10px;
 	font-size: 1rem;
 	text-decoration: none;
@@ -91,6 +93,36 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 7%;
+	width: 20%;
 	margin-right: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+	.left-aligned {
+		margin-left: 60px;
+	}
+
+	.right-aligned {
+		margin-right: 60px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.project {
+		flex-direction: column;
+	}
+
+	.project-image {
+		width: 100%;
+	}
+
+	.project-content {
+		width: 100%;
+	}
+
+	.left-aligned,
+	.right-aligned {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }

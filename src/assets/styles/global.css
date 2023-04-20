@@ -20,3 +20,13 @@
 	border-radius: 1rem;
 	backdrop-filter: blur(2px);
 }
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100%;
+}
