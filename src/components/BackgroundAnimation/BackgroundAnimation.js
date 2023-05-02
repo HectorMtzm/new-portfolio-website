@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./BackgroundAnimation.css";
 
-const isMobile = () => window.innerWidth <= 768;
-console.log("Is MOBILE???: " + isMobile());
+const isMobile = () => window.innerWidth <= 810;
 const BackgroundAnimation = ({ aboutMeRef }) => {
 	const canvasRef = useRef(null);
 
@@ -34,8 +33,8 @@ const BackgroundAnimation = ({ aboutMeRef }) => {
 			return dots;
 		};
 
-		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, isMobile() ? 50 : 150);
-		const whiteDots = createDots("rgba(200, 200, 200, 0.3)", 4, isMobile() ? 50 : 100);
+		const blueDots = createDots("rgba(6, 182, 212, 0.3)", 8, isMobile() ? 40 : 150);
+		const whiteDots = createDots("rgba(200, 200, 200, 0.3)", 4, isMobile() ? 40 : 100);
 
 		const drawDot = (dot) => {
 			context.beginPath();

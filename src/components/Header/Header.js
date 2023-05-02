@@ -12,7 +12,7 @@ const Header = () => {
 			<div className="header-content">
 				<h1 className="name">Hector Martinez</h1>
 				<h2 className="role">Backend developer</h2>
-				<p className="introduction">Ambitious Back-end Developer with a passion for full-stack mastery</p>
+				<p className="introduction">Back-end Developer with a passion for full-stack mastery</p>
 				<div className="social-links">
 					<a href="https://github.com/HectorMtzm" target="_blank" rel="noreferrer">
 						<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 496 512" width="24" height="24">

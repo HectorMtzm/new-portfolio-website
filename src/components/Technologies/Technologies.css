@@ -9,32 +9,11 @@
 	max-width: 62.5rem;
 	width: 100%;
 	margin: auto;
+	overflow: hidden;
 }
 
 .tech-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-	/* gap: 2rem; */
-	justify-items: center;
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-}
-
-@media (max-width: 600px) {
-}
-
-@media (max-width: 768px) {
-	.tech-grid {
-		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: 0.7rem;
-		padding: 0 1rem;
-	}
-}
-
-@media (min-width: 900) {
-	.tech-grid {
-		gap: 1.5rem;
-	}
-}
-
-@media (min-width: 1200px) {
 }

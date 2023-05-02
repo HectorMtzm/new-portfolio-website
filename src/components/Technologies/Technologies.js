@@ -4,7 +4,10 @@ import Technology from "./Technology";
 import useTechnologyAnimation from "./useTechnologyAnimation";
 
 const Technologies = ({ containerRef, techData }) => {
-	const animatedTechData = useTechnologyAnimation(containerRef, techData);
+	const animatedTechData = useTechnologyAnimation(
+		containerRef,
+		techData.filter((tech) => tech.show)
+	);
 
 	return (
 		<div className="tech-wrapper">

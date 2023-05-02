@@ -6,7 +6,7 @@ const useTechnologyAnimation = (ref, techData) => {
 	const calculateScale = useCallback((cursorPosition, element) => {
 		const rect = element.getBoundingClientRect();
 		const distance = Math.hypot(cursorPosition.x - (rect.x + rect.width / 2), cursorPosition.y - (rect.y + rect.height / 2));
-		const maxDistance = 200;
+		const maxDistance = 150;
 		const minScale = 1;
 		const maxScale = 1.5;
 		const scale = minScale + ((maxDistance - Math.min(distance, maxDistance)) / maxDistance) * (maxScale - minScale);

@@ -1,5 +1,4 @@
 .about-me {
-	/* min-height: 100vh; */
 	position: relative;
 	padding-top: 2rem;
 }
@@ -35,9 +34,7 @@
 
 @media (max-width: 900px) {
 	.about-content {
-		display: flex;
 		flex-direction: column;
-		justify-content: center;
 	}
 
 	.about-description {
